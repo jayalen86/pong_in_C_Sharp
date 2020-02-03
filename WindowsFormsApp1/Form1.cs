@@ -18,8 +18,8 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            pongsound = new SoundPlayer(@"C:\Users\Owner\source\repos\WindowsFormsApp1\pongsound.wav");
-            scoresound = new SoundPlayer(@"C:\Users\Owner\source\repos\WindowsFormsApp1\ding.wav");
+            pongsound = new SoundPlayer(@"C:\Users\Owner\source\repos\pong_in_C_Sharp\pongsound.wav");
+            scoresound = new SoundPlayer(@"C:\Users\Owner\source\repos\pong_in_C_Sharp\ding.wav");
         }
 
         //Stops the flickering
