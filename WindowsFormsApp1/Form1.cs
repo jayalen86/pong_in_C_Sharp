@@ -191,17 +191,36 @@ namespace WindowsFormsApp1
         private void check_game_over()
         {
             if (paddle1_score == 5) {
-                reset_game("Player 1 Wins!");
+                timer2.Stop();
+                var result = MessageBox.Show("Would you like to play again?", "Player 1 Wins!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == System.Windows.Forms.DialogResult.Yes) {
+                    reset_game();
+                    timer2.Start();
+                }
+                if (result == System.Windows.Forms.DialogResult.No)
+                {
+                    System.Windows.Forms.Application.Exit();
+                }
+
             }
             if (paddle2_score == 5)
             {
-                reset_game("Player 2 Wins!");
+                timer2.Stop();
+                var result = MessageBox.Show("Would you like to play again?", "Player 2 Wins!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    reset_game();
+                    timer2.Start();
+                }
+                if (result == System.Windows.Forms.DialogResult.No)
+                {
+                    System.Windows.Forms.Application.Exit();
+                }
             }
         }
 
-        private void reset_game(string winner)
+        private void reset_game()
         {
-            
             paddle1_score = 0;
             paddle2_score = 0;
             paddle1.Y = 150;
